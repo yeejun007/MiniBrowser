@@ -1,2 +1,2 @@
 # MiniBrowser
-Objective-c porject
+Objective-c project
