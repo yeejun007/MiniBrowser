@@ -32,7 +32,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="URL"/>
                             </textField>
                             <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zgf-x5-7nU">
-                                <rect key="frame" x="20" y="125" width="374" height="676"/>
+                                <rect key="frame" x="20" y="133" width="374" height="668"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
@@ -50,6 +50,11 @@
                         <barButtonItem systemItem="refresh" id="pjz-8i-O2N"/>
                     </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="bookmarkSegmentControll" destination="AmT-YP-edW" id="Hsq-sY-X1S"/>
+                        <outlet property="mainWebView" destination="zgf-x5-7nU" id="K1O-Fo-X0s"/>
+                        <outlet property="urlTextField" destination="fMV-W0-guY" id="TaX-uh-Vry"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
