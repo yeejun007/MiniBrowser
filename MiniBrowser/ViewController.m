@@ -13,7 +13,7 @@
 @end
 
 @implementation ViewController
-@synthesize mainWebView, urlTextField, bookmarkSegmentControll;
+@synthesize mainWebView, urlTextField, bookmarkSegmentControl;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,11 +34,30 @@
 // storyboard에서 urlTextField 마우스 오른 클릭하고 delegate를 앱 자기 자신에게 이어준다
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
     NSString *urlString = urlTextField.text;
+    
+    // 만약 주소입력칸에 http:// 가 빠져있다면 이거 붙여주는 로직 작성하기
+    // NSString에 앞부부분 문자열 확인하는 메소드가 있음
+    if(![urlString hasPrefix: @"http://"]) {
+        // http:// 가 빠져있다면 urlString을 메모리에 새롭게 할당&초기화 시키기
+        urlString = [[NSString alloc] initWithFormat:@"http://%@", urlString];
+    }
+    
     [mainWebView loadRequest: [NSURLRequest requestWithURL: [NSURL URLWithString: urlString]]];
     // 포커스 비활성화 시켜서 키보드기 내려가도록 한다
     [textField resignFirstResponder];
     return YES;
 }
 
+
+- (IBAction)bookmarkAction:(id)sender {
+    // 문서보면 UISegmentedControl 클래스에서 해당 인덱스 가져오는 메소드가 있는거 볼 수 있음
+    // 그리고 지정된 인덱스 segment의 title을 가져오는 메소드도 있다
+    // 이 인덱스 숫자는 primitive타입이므로 변수 선언할 때 * 이거 붙이면 안됨
+//    NSInteger bookmarkIndex =  <-- 이렇게 인덱스 가져와서 인덱스마다 조건문으로 분류해서 주소를 넘겨줄수도 있긴한데 그렇게 안함
+    
+    NSString *bookmarkURL = [bookmarkSegmentControl titleForSegmentAtIndex: bookmarkSegmentControl.selectedSegmentIndex];
+    NSString *urlString = [[NSString alloc] initWithFormat:@"http://www.%@.com", bookmarkURL];
+    [mainWebView loadRequest: [NSURLRequest requestWithURL: [NSURL URLWithString: urlString]]];
+}
 
 @end

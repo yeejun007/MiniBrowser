@@ -24,6 +24,9 @@
                                     <segment title="apple"/>
                                     <segment title="google"/>
                                 </segments>
+                                <connections>
+                                    <action selector="bookmarkAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="Xl4-rR-txe"/>
+                                </connections>
                             </segmentedControl>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fMV-W0-guY">
                                 <rect key="frame" x="20" y="83" width="374" height="34"/>
@@ -54,7 +57,7 @@
                     </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="bookmarkSegmentControll" destination="AmT-YP-edW" id="Hsq-sY-X1S"/>
+                        <outlet property="bookmarkSegmentControl" destination="AmT-YP-edW" id="BwI-uT-ucy"/>
                         <outlet property="mainWebView" destination="zgf-x5-7nU" id="K1O-Fo-X0s"/>
                         <outlet property="urlTextField" destination="fMV-W0-guY" id="TaX-uh-Vry"/>
                     </connections>
