@@ -38,10 +38,31 @@
                                 </connections>
                             </textField>
                             <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zgf-x5-7nU">
-                                <rect key="frame" x="20" y="133" width="374" height="668"/>
+                                <rect key="frame" x="12" y="125" width="374" height="653"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="DAn-4u-GGC"/>
+                                </connections>
                             </webView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Zc-Sx-6DR">
+                                <rect key="frame" x="0.0" y="810" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem systemItem="rewind" id="whM-eA-oEb"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="3qX-5w-aAT"/>
+                                    <barButtonItem systemItem="fastForward" id="nTl-RM-ZkW"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ixd-wZ-2KN"/>
+                                    <barButtonItem systemItem="stop" id="ckH-tx-NyY"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="nxe-nT-v7Q"/>
+                                    <barButtonItem systemItem="refresh" id="Qqf-Lv-gfD"/>
+                                </items>
+                            </toolbar>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="oyc-cO-lMe">
+                                <rect key="frame" x="189" y="416" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="0.89813512563705444" green="0.56247862822435424" blue="0.12432598634988051" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -55,8 +76,8 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="X1I-md-5lW"/>
                         <barButtonItem systemItem="refresh" id="pjz-8i-O2N"/>
                     </toolbarItems>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="oyc-cO-lMe" id="S07-YP-Sqt"/>
                         <outlet property="bookmarkSegmentControl" destination="AmT-YP-edW" id="BwI-uT-ucy"/>
                         <outlet property="mainWebView" destination="zgf-x5-7nU" id="K1O-Fo-X0s"/>
                         <outlet property="urlTextField" destination="fMV-W0-guY" id="TaX-uh-Vry"/>
