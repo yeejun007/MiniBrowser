@@ -16,6 +16,10 @@
 @property (weak, nonatomic) IBOutlet UIWebView *mainWebView;
 - (IBAction)bookmarkAction:(id)sender;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorView;
+- (IBAction)backAction:(id)sender;
+- (IBAction)forwardAction:(id)sender;
+- (IBAction)stopAction:(id)sender;
+- (IBAction)refreshAction:(id)sender;
 
 
 @end

@@ -86,4 +86,24 @@
     [activityIndicatorView stopAnimating];
 }
 
+
+
+// 문서에서 UIwebView 찾아서 읽어보면, 뒤로가기 refresh 등의 메소드를 제공하는 것을 찾아 볼 수 있다
+// 이렇게 직접 코딩을 해도 되지만, 스토리보드에서 webView 마우스 오른클릭 해보면 나오는 Recieved Action을 마우스로 직접 이어줘도 된다
+
+- (IBAction)backAction:(id)sender {
+    [mainWebView goBack];
+}
+
+- (IBAction)forwardAction:(id)sender {
+    [mainWebView goForward];
+}
+
+- (IBAction)stopAction:(id)sender {
+    [mainWebView stopLoading];
+}
+
+- (IBAction)refreshAction:(id)sender {
+    [mainWebView reload];
+}
 @end

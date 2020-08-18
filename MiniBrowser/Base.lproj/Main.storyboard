@@ -37,25 +37,33 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="0m2-aR-PNj"/>
                                 </connections>
                             </textField>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zgf-x5-7nU">
-                                <rect key="frame" x="12" y="125" width="374" height="653"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="DAn-4u-GGC"/>
-                                </connections>
-                            </webView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Zc-Sx-6DR">
                                 <rect key="frame" x="0.0" y="810" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem systemItem="rewind" id="whM-eA-oEb"/>
+                                    <barButtonItem systemItem="rewind" id="whM-eA-oEb">
+                                        <connections>
+                                            <action selector="backAction:" destination="BYZ-38-t0r" id="XWk-R8-VvQ"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="3qX-5w-aAT"/>
-                                    <barButtonItem systemItem="fastForward" id="nTl-RM-ZkW"/>
+                                    <barButtonItem systemItem="fastForward" id="nTl-RM-ZkW">
+                                        <connections>
+                                            <action selector="forwardAction:" destination="BYZ-38-t0r" id="7hQ-az-6Kn"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="ixd-wZ-2KN"/>
-                                    <barButtonItem systemItem="stop" id="ckH-tx-NyY"/>
+                                    <barButtonItem systemItem="stop" id="ckH-tx-NyY">
+                                        <connections>
+                                            <action selector="stopAction:" destination="BYZ-38-t0r" id="86i-PL-e1V"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="nxe-nT-v7Q"/>
-                                    <barButtonItem systemItem="refresh" id="Qqf-Lv-gfD"/>
+                                    <barButtonItem systemItem="refresh" id="Qqf-Lv-gfD">
+                                        <connections>
+                                            <action selector="refreshAction:" destination="BYZ-38-t0r" id="khD-OU-3Wl"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="oyc-cO-lMe">
@@ -63,6 +71,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="color" red="0.89813512563705444" green="0.56247862822435424" blue="0.12432598634988051" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </activityIndicatorView>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zgf-x5-7nU">
+                                <rect key="frame" x="20" y="125" width="374" height="653"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="DAn-4u-GGC"/>
+                                </connections>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
