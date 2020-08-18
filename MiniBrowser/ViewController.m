@@ -50,7 +50,7 @@
     }
     
     [mainWebView loadRequest: [NSURLRequest requestWithURL: [NSURL URLWithString: urlString]]];
-    // 포커스 비활성화 시켜서 키보드기 내려가도록 한다
+    // 포커스 비활성화 시켜서 키보드가 내려가도록 한다
     [textField resignFirstResponder];
     
     return YES;
@@ -72,6 +72,12 @@
 
 
 // storyboard에서 webview의 delegate를 앱 자기자신에게 연결시키기
+// webView에서 통신작업이 발생할때, 통신이 시작되면 activityIndicatorView가 시작되도록 하고,
+// 통신이 끝나면 activityIndicatorView가 중지되도록 한다
+// 이렇게 해서 화면상의 모든 액션 함수에 하드코딩 하지 않고, 네트워크 통신의 시작과 끝을 추적해서 activityIndicatorView를
+// 컨트롤 하도록 한다
+// activityIndicatorView가 stop상태일때 사라지도록 하려면,
+// 스토리보드에서 attr inspector의 behavior를 본다
 -(void)webViewDidStartLoad:(UIWebView *)webView {
     [activityIndicatorView startAnimating];
 }

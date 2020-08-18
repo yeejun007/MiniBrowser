@@ -58,7 +58,7 @@
                                     <barButtonItem systemItem="refresh" id="Qqf-Lv-gfD"/>
                                 </items>
                             </toolbar>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="oyc-cO-lMe">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="oyc-cO-lMe">
                                 <rect key="frame" x="189" y="416" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="color" red="0.89813512563705444" green="0.56247862822435424" blue="0.12432598634988051" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
